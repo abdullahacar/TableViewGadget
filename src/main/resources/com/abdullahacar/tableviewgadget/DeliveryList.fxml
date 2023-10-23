@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import com.abdullahacar.tableviewgadget.cellValueFactories.FormattedPropertyValueFactory?>
+
+<BorderPane stylesheets="@../../Styles/cdek.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abdullahacar.tableviewgadget.modules.delivery.DeliveryListController">
+   <center>
+      <StackPane fx:id="spDeliveryList" stylesheets="@../../Styles/cdek.css">
+          <children>
+              <VBox>
+                  <ScrollPane fx:id="spDelivery" fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                      <TableView fx:id="tvDelivery" maxHeight="1.7976931348623157E308" tableMenuButtonVisible="true">
+                          <columns>
+                              <TableColumn minWidth="150.0" prefWidth="150.0" text="Local Created Date">
+                                  <cellValueFactory>
+                                      <javafx.scene.control.cell.PropertyValueFactory property="createdDate" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="110.0" prefWidth="110.0" text="Type">
+                                  <cellValueFactory>
+                                      <javafx.scene.control.cell.PropertyValueFactory property="type" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="100.0" prefWidth="100.0" text="Delivery No">
+                                  <cellValueFactory>
+                                      <javafx.scene.control.cell.PropertyValueFactory property="deliveryNo" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="110.0" prefWidth="110.0" text="Status">
+                                  <cellValueFactory>
+                                      <javafx.scene.control.cell.PropertyValueFactory property="status" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="100.0" prefWidth="100.0" text="Sender">
+                                  <cellValueFactory>
+                                <FormattedPropertyValueFactory property="consignor.firstName"/>
+                            </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="100.0" prefWidth="100.0" text="Receiver">
+                                  <cellValueFactory>
+                                <FormattedPropertyValueFactory property="consignee.firstName"/>
+                            </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn minWidth="110.0" prefWidth="110.0" text="Integrated">
+                                  <cellValueFactory>
+                                      <javafx.scene.control.cell.PropertyValueFactory property="integrated" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                          </columns>
+                      </TableView>
+                  </ScrollPane>
+              </VBox>
+          </children>
+      </StackPane>
+   </center>
+</BorderPane>

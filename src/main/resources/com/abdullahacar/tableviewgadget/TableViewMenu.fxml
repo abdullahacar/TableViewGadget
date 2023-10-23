@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane style="-fx-background-color: #f2f2f2;" stylesheets="@../../Styles/cdek.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abdullahacar.tableviewgadget.TVG.TVGMenuController">
+   <right>
+      <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+         <children>
+            <Pagination fx:id="pagination" maxHeight="38.0" />
+            <ComboBox fx:id="cbPageSize" prefHeight="25.0" prefWidth="73.0" />
+            <Button fx:id="btnPopUp" mnemonicParsing="false" HBox.hgrow="NEVER" />
+         </children>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </HBox>
+   </right>
+   <left>
+      <HBox alignment="CENTER_LEFT" spacing="4.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/png/page_number.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblSelectionCount" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="/">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotalCount" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#onSelectAll">
+               <tooltip>
+                  <Tooltip text="%Select_All" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/png/to_do_list_checked_all.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <MenuButton mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../Images/png/Actions-edit-copy-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <Menu mnemonicParsing="false" onAction="#onCopySelectionAll" text="%Copy_Selection" />
+                <Menu mnemonicParsing="false" onAction="#onCopyAllAll" text="%Copy_All" />
+               </items>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="btnExportExcel" mnemonicParsing="false" onAction="#onExportExcel">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/png/excel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnClearFilter" mnemonicParsing="false" onAction="#onClearFilter">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/png/clear_filter.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>
